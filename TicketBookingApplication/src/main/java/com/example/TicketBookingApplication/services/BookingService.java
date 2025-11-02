@@ -149,7 +149,6 @@ public class BookingService {
     }
 
     public List<Booking> getBookingsByStatus(BookingStatus status) {
-        return bookingRepository.findByStatus(status);
+        return bookingRepository.findByBookingStatus(status);
     }
-
 }

@@ -25,12 +25,6 @@ public class MovieService {
             .orElseThrow(() -> new RuntimeException("Movie not found"));
     }
 
-    public Movie getMovieByTitle(String title) {
-        // Logic to fetch a movie by name
-        return movieRepository.findByTitle(title)
-                .orElseThrow(() -> new RuntimeException("Movie not found"));
-    }
-
     public List<Movie> getMoviesByGenre(String genre) {
         // Logic to fetch movies by genre
         List<Movie> list = movieRepository.findByGenre(genre)

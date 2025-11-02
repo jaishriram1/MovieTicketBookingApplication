@@ -28,9 +28,9 @@ public class MovieController {
         return movieService.getAllMovies();
     }
 
-    @GetMapping("/{title}")
-    public ResponseEntity<?> getMovieByTitle(@PathVariable String title) {
-        return ResponseEntity.ok(movieService.getMovieByTitle(title));
+    @GetMapping("/{name}")
+    public ResponseEntity<?> getMovieByName(@PathVariable String name) {
+        return ResponseEntity.ok(movieService.getMovieByName(name));
     }
 
     @GetMapping("/genre/{genre}")

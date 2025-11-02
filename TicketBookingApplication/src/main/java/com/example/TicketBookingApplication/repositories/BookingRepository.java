@@ -12,5 +12,5 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
     // Custom query methods can be defined here if needed
     List<Booking> findByUser(User user);
     List<Booking> findByShow(Show show);
-    List<Booking> findByStatus(BookingStatus status);
+    List<Booking> findByBookingStatus(BookingStatus bookingStatus);
 }

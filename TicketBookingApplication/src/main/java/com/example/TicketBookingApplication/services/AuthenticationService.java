@@ -26,7 +26,7 @@ public class AuthenticationService {
     
     public User registerNormalUser(RegisterRequestDto registerRequestDto) {
         // Implement registration logic using userService
-        if(userRepository.findByUsername(registerRequestDto.getUsername()).isPresent()){
+        if(userRepository.findByName(registerRequestDto.getUsername()).isPresent()){
             throw new RuntimeException("Username already exists");
         }
 
@@ -42,7 +42,7 @@ public class AuthenticationService {
 
     public User registerAdminUser(RegisterRequestDto registerRequestDto) {
         // Implement registration logic for admin users
-        if(userRepository.findByUsername(registerRequestDto.getUsername()).isPresent()){
+        if(userRepository.findByName(registerRequestDto.getUsername()).isPresent()){
             throw new RuntimeException("Username already exists");
         }
 
