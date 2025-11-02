@@ -21,6 +21,7 @@ public class AuthenticationService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+
     @Autowired
     private JwtService jwtService;
     
@@ -35,7 +36,8 @@ public class AuthenticationService {
 
         User newUser = new User();
         newUser.setName(registerRequestDto.getUsername());
-        newUser.setPassword(registerRequestDto.getPassword());// In real applications, ensure to hash
+        newUser.setPassword(passwordEncoder.encode(registerRequestDto.getPassword()));// In real applications, ensure to hash
+        newUser.setEmail(registerRequestDto.getEmail());
         newUser.setRoles(new ArrayList<>(roles));
         return userRepository.save(newUser);
     }
